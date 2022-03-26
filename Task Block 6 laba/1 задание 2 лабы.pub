@@ -1,0 +1,66 @@
+
+import java.util.Scanner;
+//import java.lang.Math;
+import java.util.Arrays;
+import java.util.Random;
+import java.lang.ArrayIndexOutOfBoundsException;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+	Scanner in = new Scanner(System.in);	
+    Random random = new Random (); 
+    int rnd = random.nextInt (10) +10;
+	
+	System.out.print("rnd=");
+	System.out.println(rnd);
+	int []ish = new int [rnd];	
+	for (int i = 0; i < rnd; i++) {
+        int rnd2 = random.nextInt (50)-25;
+		ish[i]=rnd2;     
+         };
+    System.out.print("Input number N beetwen 0 and ");
+    System.out.print(rnd);
+    System.out.println(" press Enter...");
+    int wh=in.nextInt(); 
+    while (wh>rnd) {
+    System.out.print("Input number N beetwen 0 and ");
+    System.out.print(rnd);
+    System.out.println(" press Enter...");   
+    
+     
+    final int N = in.nextInt() ;
+    wh=(int) N;
+    }
+    
+    int []out=new int[wh];
+    
+    System.out.print("Input a number: ");      
+	System.out.println(wh);
+	
+	for (int i = 0; i < ish.length; i++) {
+		System.out.println(ish[i]);}
+	Arrays.sort(ish);
+	System.out.println("После сортировки");
+	for (int i = 0; i < ish.length; i++) {
+		System.out.println(ish[i]);}
+	
+    for (int i = ish.length - wh; i < ish.length; i++){ 	
+
+    	
+        try {            
+            out[i-(ish.length - wh)]=ish[i];
+           //11System.out.println("Element in the given index is :: "+out[i-(ish.length - wh)]);
+         } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("The index you have entered is invalid");
+            System.out.println("Please enter an index number between 0 and 6");
+         }
+    	
+    }
+    System.out.println("Выходной массив...");
+	for (int i = 0; i < out.length; i++) {
+		System.out.println(out[i]);}		
+	}
+}
+
+

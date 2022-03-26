@@ -1,0 +1,43 @@
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
+
+public class Zadanie2 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);	
+	    Random random = new Random (); 
+
+	    System.out.print("Input N ");
+
+	    int n=in.nextInt();
+	    in.close();
+	    int []a = new int [n];	
+	    float []b = new float [n];
+	    for (int i = 0; i < n; i++) {
+	        a[i] = (random.nextInt (50)-25);
+			b[i]=0;     
+	    };
+	    System.out.print("a=");
+	    for (int i = 0; i < n; i++) {
+	    	System.out.println(a[i]);	    	
+	    };
+	    
+	    for (int i = 0; i < n; i++) {
+	    	if (a[i]>0) {
+	    		for (int ii = 0; ii < n; ii++) {
+	    			if (b[ii]==0) 
+	    			{b[ii]=a[i]/3;
+	    			break;}
+	    			}
+	    		}
+	    }
+	    		
+	    System.out.print("b=");    
+	    Arrays.sort(b);
+	    for (int i = 0; i < n; i++) {
+	    	System.out.println(b[i]);
+	    };
+	
+	}
+}
