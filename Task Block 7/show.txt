@@ -1,0 +1,70 @@
+//show.java
+package laba3;
+//package com.makotogroup.intro;
+
+public class show {
+
+	private String authr;
+	private String name;
+	private String description;
+	private int periodType;
+
+	public show(String authr, String name, String description, int periodType) {
+		this.authr = authr;
+		this.name = name;
+		this.description = description;
+		this.periodType = periodType;
+	}
+
+	public String getAuthr() {
+		return authr;
+	}
+
+	public void setAuthr(String authr) {
+		this.authr = authr;
+	}	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	 
+	public int getPeriodType() {
+		return periodType;
+	}
+
+	public void setPeriodType(int periodType) {
+		this.periodType = periodType;
+	}
+
+	public String toString() {
+		String period;
+		if (periodType==1) {period="every day";}
+		else if (periodType==2) {period="every week";}
+		else if (periodType==3) {period="every month";}
+		else {period="";}
+		return "My show is " + name + ". I'm " + authr + " show about wetaher. See in "+period;
+	}
+}
+
+//testshow.java
+package laba3;
+
+public class testshow {
+	public static void main(String[] args) {
+		show show = new show("Pety", "MayMi", "weather", 3);
+		System.out.println(show.toString());
+		System.out.println(show);
+	}
+}
