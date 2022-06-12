@@ -6,7 +6,7 @@ Show - передача:
          - name-название;       | Конструстор
          -description-описание; |
          -periodType - переодичность (1-ежедневно; 2-еженедельно; 3-ежемесячно)
-
+*/
 //show.java
 package laba3;
 //package com.makotogroup.intro;
