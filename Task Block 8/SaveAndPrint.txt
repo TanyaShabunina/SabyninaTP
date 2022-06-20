@@ -1,0 +1,56 @@
+//import java.io.FileInputStream;
+//import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.io.*;
+
+public class SaveAndPrint {
+    String filePath = "C:/file.txt";	
+	public void add(TD TD1, ppops PP1) 
+	{
+        String text = "название депо "+TD1.name+";"+ "адрес депо"+TD1.adress+";"+"город "+TD1.city+";"+"Количество сотрудников"+TD1.counts+"--- Вид ремонта = ppops "+PP1.tip_rem+";"+"год ремонта "+PP1.year+";"+"месяц "+ PP1.month+";"+"результат ремонта"+PP1.result+";"+"номер вагона"+PP1.number+"\n";
+        try {
+            Files.write(Paths.get(filePath), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+	}
+	public void add(TD TD1, TKR TKR1) 
+	{
+        String text = "название депо "+TD1.name+";"+ "адрес депо"+TD1.adress+";"+"город "+TD1.city+";"+"Количество сотрудников"+TD1.counts+"--- Вид ремонта = TKR"+TKR1.tip_rem+";"+"номер локомотива"+TKR1.number+";"+"название неисправности"+ TKR1.title+";"+"описание выполненой работы"+TKR1.description+";"+"сумма ремонта"+TKR1.summa+"\n";
+        try {
+            Files.write(Paths.get(filePath), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+	}
+	public void add(TD TD1, KapR KapR1) 
+	{
+        String text = "название депо "+TD1.name+";"+ "адрес депо"+TD1.adress+";"+"город "+TD1.city+";"+"Количество сотрудников"+TD1.counts+"--- Вид ремонта = KapR"+"год ремонта"+KapR1.year+";"+"месяц ремонта"+KapR1.month+";"+"Номер вагона на ремонте"+ KapR1.number+";"+"сумма ремонта"+KapR1.summa+"\n";
+        try {
+            Files.write(Paths.get(filePath), text.getBytes(), StandardOpenOption.APPEND);
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+	}
+	public void print() 
+	{
+		try( FileReader reader = new FileReader(filePath))
+        {
+           // читаем посимвольно
+            int c;
+            while((c=reader.read())!=-1)
+            {                 
+                System.out.print((char)c);
+            } 
+        }
+        catch(IOException ex)
+		{             
+            System.out.println(ex.getMessage());
+        }   
+	}
+}

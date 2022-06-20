@@ -1,0 +1,8 @@
+
+public class TKR extends TD {
+	public String tip_rem;
+	public String summa;
+	public String title;
+	public int number;
+	public String description;
+}
