@@ -39,10 +39,7 @@ Person newPerson(){
     int x = scan.nextInt();
 
     if (x == 1) {
-        System.out.println("Введите название цеха: ");
-        shop = scan.next();
-        addShop(newShop(shop));
-        a= shopList.size()-1;
+        addShop(newShop());
 
     }
     if (x == 2) {
@@ -61,7 +58,7 @@ Person newPerson(){
     }
 
 
-  //  String ot = ((Shop) shopList.get(x)).getName();
+
     System.out.println("Введите год рождения сотрудника: ");
     int n = scan.nextInt();
     int date = data.getYear() - n;
@@ -125,7 +122,6 @@ Person person = new Person(name, pol, date, shop, zp);
                 showIdShop();
                 int id = 0;
                 int newOt = scan.nextInt();
-                changeKolvoPerson(numberPerson, newOt);
                 String nOt = ((Shop) shopList.get(newOt)).getName();
                 ((Person) personList.get(numberPerson)).setShop(nOt);
 
@@ -134,9 +130,61 @@ Person person = new Person(name, pol, date, shop, zp);
         }
 
     }
+////////
+void addShop(Shop Otdel) {
+    shopList.add(Otdel);
+}
+    void showShop() {
+        for (int i = 0; i < shopList.size(); i++) {
+            Shop number = shopList.get(i);
+            System.out.println(number);
+        }
+    }
 
+    void showIdShop() {
+        for (int i = 0; i < shopList.size(); i++) {
+            Shop number = shopList.get(i);
+            System.out.println(i + " " + number);
+        }
+    }
+    Shop newShop() {
 
+        System.out.println("Введите название нового цеха: ");
+        String name = scan.next();
+        Shop h = new Shop(name);
+        System.out.println(h);
+        return h;
+    }
+    void deleteShop() {
+        System.out.println();
+        System.out.println("Введите номер цеха: ");
+        int n = scan.nextInt();
+        shopList.remove(n);
+    }
 
+    void changeShop() {
+        System.out.println();
+        System.out.println("Введите номер цеха, которое хотите изменить: ");
+        int n = scan.nextInt();
+        Object p = shopList.get(n);
+        System.out.println(p);
+        System.out.println("Выберите что хотите изменить: 1 Полностью цех 2 Название ");
+        int x = scan.nextInt();
+        switch (x) {
+            case 1:
+                System.out.println("Введите какой отдел хотите полностью изменить: ");
+                int c = scan.nextInt();
+                shopList.set(c, newShop());
+                break;
+            case 2:
+                System.out.println("Введите новое название: ");
+                String g = scan.next();
+                 shopList.get(n).setName(g);
+                break;
+            default:
+                break;
+        }
+    }
 
 
 
