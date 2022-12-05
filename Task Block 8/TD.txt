@@ -1,8 +1,0 @@
-
-public class TD {
-	public String adress;
-	public String name;
-	public String city;
-	public int counts;
-	public TD () {};
-}

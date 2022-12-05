@@ -1,7 +1,0 @@
-
-public class KapR extends TD {
-	public String year;
-	public String month;
-	public String summa;
-	public int number;
-}
